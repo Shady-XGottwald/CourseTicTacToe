@@ -5,7 +5,7 @@ const val cross = "X"
 const val nought = "O"
 
 var initArray = mutableListOf("_", "", "", "", "", "", "", "", "")
-private fun main (){
+private fun main () {
     initArray[0] = "_"
     initArray[1] = "_"
     initArray[2] = "_"
@@ -21,12 +21,12 @@ private fun main (){
 
 
     //Loop to introduce a change in variable by input
-    for (i in initArray.indices){
+    for (i in initArray.indices) {
         val inputR = readLine()!!.toString()
         playerTurn(inputR)
-        if(initArray[i] == cross ){
+        if (initArray[i] == cross) {
             playerX = false
-            if(initArray[i] == nought){
+            if (initArray[i] == nought) {
                 playerX = true
             }
 
@@ -36,18 +36,19 @@ private fun main (){
          GAME BOARD PRINTING!!!!!!11
          */
         println("---------")
-        print("""
+        print(
+            """
                | ${initArray[0]} ${initArray[1]} ${initArray[2]} |
                | ${initArray[3]} ${initArray[4]} ${initArray[5]} |
                | ${initArray[6]} ${initArray[7]} ${initArray[8]} |
-        """.trimIndent())
+        """.trimIndent()
+        )
         println(" ")
         println("---------")
 
     }
     gameTerminate()
 }
-
 private fun gameTerminate()= println("GAME OVER!!!")
 private fun playerTurn (input:String) {
 
